@@ -1,0 +1,482 @@
+/* Start Global Rules*/
+/* End Global Rules*/
+$mainColore : #14cbb8;
+$socundColor:#2c4755;
+$pragColor:grey;
+$linehight:1.5;
+$h2Color:#ebeced;
+$sectionPaddind: 3em;
+$sectionBackground:#f6f6f6;
+$main-Duration: 0.3s;
+html {
+    scroll-behavior: smooth;
+}
+/*Start Header*/
+.header {
+padding:20px ;
+.logo {
+    img{
+        width: 70px;   
+    }  
+}
+.links {
+    position: relative;
+    .icon{
+        width: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        span{
+            background-color: #333;
+            margin-bottom: 5px;
+            height: 3px;
+            &:first-child{
+                width: 100%;
+            }
+            &:nth-child(2){
+                width: 50%;
+                transition: $main-Duration;
+            }
+            &:nth-child(3){
+                width: 100%;
+            }
+            &:hover{
+                width: 100%;
+            }
+        }
+    }
+    ul{
+        background-color: $sectionBackground;
+        position: absolute;
+        right: 0;
+        min-width: 200px;
+        top: calc(100% + 15px);
+        display: none;
+        z-index: 1;
+        li{
+            a{
+                display: block;
+                padding:10px;
+                text-decoration: none;
+                color: #333;
+                transition: $main-Duration;
+                &:hover {
+                    padding-left: 25px;
+                }
+            }
+            &:not(:last-child) a {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+        &::before {
+            @extend .arrowTop;
+        }
+    }
+    &:hover ul {
+        display: block;
+    }
+}
+}
+/*End Header*/
+/*Start Landing*/
+.section-landing {
+    background-image: url(/img/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 10px);
+    .intro-text {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 380px;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        .title{
+            color: $mainColore;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        .nots{
+            line-height: 1.8;
+            font-size: 19px; 
+        }
+    }
+}
+/*End Landing*/
+/*Start feat*/
+.features {
+    background-color: $sectionBackground;
+    padding-top: $sectionPaddind;
+    .boxs {
+       display: grid;
+       grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+       grid-gap:20px;
+      .feat{
+        text-align: center;
+        padding: 20px;
+        p{
+            color: $pragColor;
+            line-height: $linehight;
+        }
+        i{
+            color: $mainColore;
+        }
+      }  
+    }
+}
+/*End feat*/
+
+/* Start services*/
+.services{
+    padding-top: $sectionPaddind;
+    padding-bottom: $sectionPaddind;
+    .intro-serv{
+        text-align: center;
+        position: relative;
+        h2{
+            @extend .all-h2;
+            @media (max-width:767px) {
+                font-size: 50px;
+                text-align: left;
+                }
+        }
+        p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+        @media (max-width:767px) {
+            margin: 18px 0 0;
+            text-align: right;
+            }
+        }
+    }
+       .services-content{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap:20px;
+            margin-top: 100px;
+            .gr{
+                position: relative;
+                .serv{
+                    display: flex;
+                    margin-bottom: 30px;
+                    @media (max-width:767px) {
+                            flex-direction: column;
+                            text-align: center;
+                            }
+                    i{
+                        flex-basis: 200px;
+                        margin-top: 25px;  
+                        color: $mainColore;
+                        @media (max-width:767px) {
+                            flex-basis: 0;
+                             }
+                    }
+                    .text{
+                        p{
+                            color: $pragColor;
+                            line-height: $linehight;
+                        }
+                    }
+                }
+                &:nth-child(3){
+                  .img{
+                        width: 250px;
+                        width: 250px;
+                        margin-left: 30%;
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 120px;
+                        height: 400px;
+                        background-color: $socundColor;
+                        top: -38px;
+                        right: -15px;
+                        z-index: -2;
+                    }
+                    @media (max-width:1199px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .img-left{
+            width: 100%;
+            margin-left: 40px;
+            position: relative;
+            flex: 1;
+        }
+}
+
+/*End services*/
+/*Start portfolio*/
+.portfolio {
+    padding-top:      $sectionPaddind;
+    padding-bottom:   $sectionPaddind;
+    background-color: $sectionBackground;
+    .intro-serv{
+        text-align: center;
+        position: relative;
+        h2{
+            @extend .all-h2;
+            @media (max-width:767px) {
+                font-size: 50px;
+                text-align: left;
+                }
+        }
+       p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+        @media (max-width:767px) {
+            margin: 18px 0 0;
+            text-align: right;
+                }
+        }
+    }
+    .my-projects{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(300px, 1fr));
+            grid-gap: 30px;
+            padding-top: 5em;
+            @media (max-width:767px) {
+                grid-template: inherit;
+                text-align: center;
+            }
+            .box{
+                background-color: #fff;
+                img{
+                    max-width: 100%;
+                }
+                h2{
+                    padding: 0px 20px;
+                    font-size: 20px;
+                }
+                p{
+                    padding: 0px 20px;
+                    line-height: $linehight;
+                    color: $pragColor;
+                    @media (max-width:767px) {
+                        margin: 18px 0 0;
+                        text-align: right;
+                            }
+                }
+            }
+    }
+}
+/*End portfolio*/
+/*Start About*/
+.about{
+    padding-top: $sectionPaddind;
+    padding-bottom: $sectionPaddind;
+    .intro-serv{
+        text-align: center;
+        position: relative;
+        h2{
+            @extend .all-h2;
+            @media (max-width:767px) {
+                font-size: 50px;
+                text-align: left;
+             }
+        }
+       p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+        @media (max-width:767px) {
+            margin: 18px 0 0;
+            text-align: right;
+                }
+        } 
+}
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 5em;
+        @media (max-width:767px) {
+            grid-template: inherit;
+            text-align: center;
+            }
+            @media (max-width:991px) {
+                flex-direction: column;
+                text-align: center;
+                }
+        .img {
+            position: relative;
+            @media (max-width:991px) {
+              margin: 0 auto 35px;
+                } 
+            img{
+                width: 250px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: #ebeced;
+                width: 100px;
+                height: calc(100% + 30px);
+                left: -21px;
+                z-index: -2;
+                top: -42px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 300px;
+                border-left: 80px solid #14cbb8;
+                border-bottom: 79px solid #14cbb8;
+                left: 221px;
+                top: -40px;
+                z-index: -2;
+            }
+            &::after , &::before{
+                @media (max-width:991px) {
+                    display: none;
+                    }
+            }
+        }
+        .text{
+            flex-basis: calc(100% - 500px);
+            position: relative;
+            @media (max-width:767px) {
+                flex: auto;
+                }
+            p:nth-child(1){
+                color: black;
+                line-height: 2;
+                font-weight: bold;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 50%;
+                border-bottom: 4px solid #14cbb8;
+                top: 45%;
+                @media (max-width:991px) {
+                    right: 25%;
+                    }
+            }
+            p:nth-child(2){
+                color: $pragColor;
+                line-height: 2;
+                font-weight: normal;
+                padding-top: 4em;
+            }
+        }
+    }
+}
+/*End About*/
+/*Start Contact*/
+.contact {
+    padding-top: $sectionPaddind;
+    padding-bottom: $sectionPaddind;
+    background-color: $sectionBackground;
+    .info-cont {
+        text-align: center;
+        position: relative;
+        padding-top: $sectionPaddind;
+        padding-bottom: $sectionPaddind;
+        h2{
+            @extend .all-h2;
+            @media (max-width:767px) {
+                font-size: 50px;
+                text-align: left;
+                }
+        }
+       p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+        @media (max-width:767px) {
+            margin: 18px 0 0;
+            text-align: right;
+                }
+        } 
+    }
+    .emil-cont{
+        text-align: center;
+        // padding-top:5rem;
+        line-height: .5;
+        padding-bottom: 5rem;
+        @media (max-width:767px) {
+            padding-bottom: 0;
+             }
+        h3{
+            @media (max-width:767px) {
+               font-size: 20px !important;
+                }
+                }
+        }
+        h3:nth-child(1){
+            font-size: 35px;
+            font-weight: 800;
+            color: $socundColor;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+        h3:nth-child(2){
+            font-size: 35px;
+            font-weight: 800;
+            color: $mainColore;
+            cursor: pointer;
+        }
+        span{
+            font-size: 18px;
+            i{
+                color: $socundColor;
+                margin-left: 5px;  
+                  cursor: pointer;
+            }
+        }
+    }
+
+/*End Contact*/
+/*footer*/
+footer{
+    text-align: center;
+    background-color: $socundColor;
+    padding: 35px;
+    color: #fff;
+    font-size: 20px;
+    span{
+        color: $mainColore;
+    }
+}
+/*footer*/
+// classes to extend
+.arrow_right {
+
+}
+.arrow_left {
+
+}
+.arrowTop {
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(190, 190, 190) transparent;
+    right: 0px;
+    top: -20px;
+}
+.arrow_bottom {
+}
+.grid-3{
+
+}
+.all-h2{
+    font-size: 100px;
+    color: $h2Color; 
+    padding: 0;
+    margin: 0; 
+    padding-top: 10px; 
+    margin-bottom: -28px;
+}
